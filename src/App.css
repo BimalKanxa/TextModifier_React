@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/* .navbar{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* justify-content: space-around; */
+  /* list-style-type: none;
+  height: 80px;
+  background: orangered;
+  color: white;
+}
+.logo{
+  width: 20%;
+}
+
+.navbar li{
+    margin-left: 100px;
+}
+.navbar li:hover{
+  color: black;
+  cursor: pointer;
+} */ 
