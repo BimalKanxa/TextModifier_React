@@ -47,10 +47,10 @@ export default function Textform(props) {
                     {/* <label for="myBox" className="form-label">Example textarea</label> */}
                     <textarea className="form-control" onChange={handleOnChange} value={text} id="myBox" rows="10" onFocus={handleOnFocus} style={{backgroundColor:props.mode==='dark'?'#341a1a':'white',color:props.mode==='dark'?'white':'black', fontWeight: isbold ? 'bold' : 'normal' }}></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className='btn btn-secondary mx-2' onClick={handleDownClick}>Convert to Lowercase</button>
-                <button className='btn btn-dark mx-2' onClick={handleBold}>Convert to Bold</button>
-                <button className='btn btn-danger mx-2' onClick={handleClearClick}>Clear</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.length===0} className='btn btn-secondary mx-2 my-1' onClick={handleDownClick}>Convert to Lowercase</button>
+                <button disabled={text.length===0} className='btn btn-dark mx-2 my-1' onClick={handleBold}>Convert to Bold</button>
+                <button disabled={text.length===0} className='btn btn-danger mx-2 my-1' onClick={handleClearClick}>Clear</button>
             </div>
 
             <div className="container my-3"  style={{color:props.mode==='dark'?'white':'black'}}>
@@ -59,7 +59,7 @@ export default function Textform(props) {
                 <p>{0.008 * countWord(text)} Minutes read</p>
 
                 <h3>Preview</h3>
-                <p>{text.length>0?text:"enter text above to preview here"}</p>
+                <p>{text.length>0?text:"nothing to preview"}</p>
             </div>
 
         </>

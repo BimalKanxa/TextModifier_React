@@ -1,9 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 // import {Link} from 'react-router-dom'
 
 export default function Navbar(props) {
+  
+  const [color, setcolor] = useState('white');
+
+  const colorSelection = (event) => {
+    
+    setcolor(event.target.value)
+}
+
+  const selectColor = (event) =>{
+      const colorvalue  = event.target.value;
+      setcolor(colorvalue);
+      document.body.style.backgroundColor = colorvalue;
+  }
   return (
+    
     <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={props.mode}>
   <div className="container-fluid">
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,14 +30,15 @@ export default function Navbar(props) {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        <div className="d-flex mx-2 my-2">
+          <input type="color" name="colorselect" id="colorselect" onChange={colorSelection} value={color} onClick={selectColor} style={{cursor:'pointer'}}/>
+        </div>
+
         {/* <li className="nav-item">
           <a className="nav-link" href="/about">{props.aboutText}</a>
         </li> */}
       </ul>
-      {/* <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form> */}
+     
 
 <label className="form-check-label text-dark mx-3 my-2"htmlFor="flexSwitchCheckDefault">Light Mode</label>
 <div className="form-check form-switch">
